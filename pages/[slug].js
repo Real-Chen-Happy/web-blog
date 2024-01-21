@@ -21,7 +21,7 @@ const Post = ({ post, blockMap }) => {
 }
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts({ onlyNewsletter: false })
+  const posts = await getAllPosts({})
   return {
     paths: posts.map((row) => `${BLOG.path}/${row.slug}`),
     fallback: true

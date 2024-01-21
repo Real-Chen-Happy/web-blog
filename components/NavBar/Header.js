@@ -6,8 +6,6 @@ import { useRouter } from 'next/router'
 import {
   HomeIcon,
   NewspaperIcon,
-  CollectionIcon,
-  SparklesIcon,
   SearchIcon,
   MenuIcon
 } from '@heroicons/react/outline'
@@ -40,27 +38,20 @@ const NavBar = () => {
     },
     {
       id: 1,
-      name: t.NAV.NEWSLETTER,
-      to: '/newsletter',
+      name: t.NAV.TECH,
+      to: '/tech',
       icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
       show: BLOG.pagesShow.newsletter
     },
     {
       id: 2,
-      name: t.NAV.NOTES,
-      to: '/notes',
-      icon: <CollectionIcon className='inline-block mb-1 h-5 w-5' />,
-      show: BLOG.pagesShow.notes
+      name: t.NAV.LIFE,
+      to: '/life',
+      icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
+      show: BLOG.pagesShow.newsletter
     },
     {
       id: 3,
-      name: t.NAV.PROJECTS,
-      to: '/projects',
-      icon: <SparklesIcon className='inline-block mb-1 h-5 w-5' />,
-      show: BLOG.pagesShow.projects
-    },
-    {
-      id: 4,
       name: t.NAV.SEARCH,
       to: '/search',
       icon: <SearchIcon className='inline-block mb-1 h-5 w-5' />,
