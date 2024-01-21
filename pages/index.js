@@ -8,8 +8,6 @@ import BLOG from '@/blog.config'
 export async function getStaticProps() {
   var posts = await getAllPosts({})
 
-
-  console.log(posts.length);
   if (posts.length > 5) {
     posts = posts.slice(0,5);
   }

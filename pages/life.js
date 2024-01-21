@@ -8,7 +8,7 @@ export async function getStaticProps() {
   const posts = await getAllPosts({ onlyLife: true })
 
   const heros = await getAllPosts({ onlyHidden: true })
-  const hero = heros.find((t) => t.slug === 'newsletter')
+  const hero = heros.find((t) => t.slug === BLOG.lifeSection)
 
   let blockMap
   try {
@@ -27,7 +27,7 @@ export async function getStaticProps() {
   }
 }
 
-const newsletter = ({ posts, blockMap }) => {
+const life = ({ posts, blockMap }) => {
   return (
     <Container title={BLOG.newsletter} description={BLOG.description}>
       <NewsletterHero blockMap={blockMap} />
@@ -38,4 +38,4 @@ const newsletter = ({ posts, blockMap }) => {
   )
 }
 
-export default newsletter
+export default life

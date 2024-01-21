@@ -4,6 +4,8 @@ const BLOG = {
   email: 'i@zuolan.me',
   link: 'https://zuolan.me',
   newsletter: 'Notionic Weekly',
+  techSection: 'techSec',
+  lifeSection: 'lifeSec',
   description: 'A static blog build on top of Notion and Next.js',
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   timezone: 'Asia/Shanghai', // See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for all options.

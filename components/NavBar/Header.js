@@ -41,14 +41,14 @@ const NavBar = () => {
       name: t.NAV.TECH,
       to: '/tech',
       icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
-      show: BLOG.pagesShow.newsletter
+      show: true
     },
     {
       id: 2,
       name: t.NAV.LIFE,
       to: '/life',
       icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
-      show: BLOG.pagesShow.newsletter
+      show: true
     },
     {
       id: 3,
@@ -83,7 +83,6 @@ const NavBar = () => {
       </ul>
 
       <div className='nav-func-btn block'>
-        <ThemeSwitcher />
         <LangSwitcher />
       </div>
 
@@ -113,9 +112,6 @@ const NavBar = () => {
                     </Link>
                   )
               )}
-            </div>
-            <div className='px-4 py-4'>
-              <Social />
             </div>
           </div>
         )}
