@@ -5,14 +5,14 @@ import { lang } from '@/lib/lang'
 import { useRouter } from 'next/router'
 import {
   HomeIcon,
-  NewspaperIcon,
+  VideoCameraIcon,
   SearchIcon,
+  CodeIcon,
   MenuIcon
 } from '@heroicons/react/outline'
-import Social from '../Common/Social.js'
-import ThemeSwitcher from './ThemeSwitcher.js'
 import LangSwitcher from './LangSwitcher.js'
 import Logo from '@/components/Common/Logo'
+import TechIcon from '@/components/Common/TechIcon'
 import { motion } from 'framer-motion'
 
 const NavBar = () => {
@@ -40,14 +40,14 @@ const NavBar = () => {
       id: 1,
       name: t.NAV.TECH,
       to: '/tech',
-      icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <CodeIcon className='inline-block mb-1 h-5 w-5' />,
       show: true
     },
     {
       id: 2,
       name: t.NAV.LIFE,
       to: '/life',
-      icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
+      icon: <VideoCameraIcon className='inline-block mb-1 h-5 w-5' />,
       show: true
     },
     {

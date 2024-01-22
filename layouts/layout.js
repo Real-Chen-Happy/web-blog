@@ -38,7 +38,7 @@ const Layout = ({ blockMap, frontMatter, fullWidth = false, subPage = false }) =
           pageTitle={showSubPageTitle ? pageTitle : null}
         />
       </motion.div>
-      <PostFooter />
+      {/* <PostFooter /> */}
       <Comments frontMatter={frontMatter} />
     </Container>
   )

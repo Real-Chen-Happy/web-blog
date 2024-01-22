@@ -4,6 +4,8 @@ import BLOG from '@/blog.config'
 
 import dayjs from 'dayjs'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
+import utc from 'dayjs/plugin/utc'
+
 
 // Set the default language to BLOG.lang
 dayjs.extend(localizedFormat)
@@ -26,7 +28,8 @@ export default function FormattedDate ({ date }) {
     } catch (err) {
       console.warn(`dayjs locale \`${locale}\` not found`)
     }
-    return dayjs(date).format('ll')
+    dayjs.extend(utc)
+    return dayjs(date).utc().format('ll')
   }, [locale, date])
 
   // Solving the problem of inconsistent rendering between server-side and client-side.

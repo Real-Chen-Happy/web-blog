@@ -1,11 +1,11 @@
 import Container from '@/components/Container'
 import BlogPost from '@/components/BlogPost'
-import NewsletterHero from '@/components/Hero/Newsletter'
+import IntroHero from '@/components/Hero/Intro'
 import { getAllPosts, getPostBlocks } from '@/lib/notion'
 import BLOG from '@/blog.config'
 
 export async function getStaticProps() {
-  const posts = await getAllPosts({ onlyLife: true })
+  const posts = await getAllPosts({ onlyTech: true })
 
   const heros = await getAllPosts({ onlyHidden: true })
   const hero = heros.find((t) => t.slug === BLOG.techSection)
@@ -30,7 +30,7 @@ export async function getStaticProps() {
 const tech = ({ posts, blockMap }) => {
   return (
     <Container title={BLOG.newsletter} description={BLOG.description}>
-      <NewsletterHero blockMap={blockMap} />
+      <IntroHero blockMap={blockMap} />
       {posts.map((post) => (
         <BlogPost key={post.id} post={post} />
       ))}

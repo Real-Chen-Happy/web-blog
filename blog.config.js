@@ -1,7 +1,7 @@
 const BLOG = {
   title: 'Notionic',
-  author: '左蓝',
-  email: 'i@zuolan.me',
+  author: 'Real',
+  email: '1@realchen.com',
   link: 'https://zuolan.me',
   newsletter: 'Notionic Weekly',
   techSection: 'techSec',
@@ -37,6 +37,10 @@ const BLOG = {
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
   notionDomain: 'izuolan.notion.site',
   telegramToken: process.env.TELEGRAM_TOKEN, // The token of your Telegram bot
+  socialLink: {
+    github: 'https://github.com/Real-Chen-Happy',
+    linkedin: 'https://www.linkedin.com/in/hengzhi-chen-0bab59184',
+  },
   analytics: {
     provider: '', // Currently we support Google Analytics, Ackee, Umami and Cloudflare Insights, please fill with 'ga' or 'ackee' or 'umami' or 'cf', leave it empty to disable it.
     ackeeConfig: {

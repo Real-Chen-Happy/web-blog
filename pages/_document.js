@@ -18,12 +18,6 @@ class MyDocument extends Document {
             sizes='192x192'
             href='/R.png'
           ></link>
-          <link
-            rel='alternate'
-            type='application/rss+xml'
-            title='RSS 2.0'
-            href='/feed'
-          ></link>
           {BLOG.appearance === 'auto' ? (
             <>
               <meta

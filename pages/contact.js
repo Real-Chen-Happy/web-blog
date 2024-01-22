@@ -26,7 +26,6 @@ export const Contact = () => {
           </a>
         </p>
       </div>
-      <ContactForm />
     </Container>
   )
 }

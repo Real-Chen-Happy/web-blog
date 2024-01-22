@@ -27,37 +27,6 @@ const Footer = ({ fullWidth }) => {
   const y = d.getFullYear()
   const from = +BLOG.since
 
-  const links = [
-    {
-      id: 0,
-      name: t.NAV.ABOUT,
-      to: BLOG.path || '/about',
-      icon: <UserIcon className='inline-block mb-1 h-5 w-5' />,
-      show: true
-    },
-    {
-      id: 1,
-      name: t.NAV.FRINEDS,
-      to: '/friends',
-      icon: <UsersIcon className='inline-block mb-1 h-5 w-5' />,
-      show: BLOG.pagesShow.friends
-    },
-    {
-      id: 2,
-      name: t.NAV.BOOKS,
-      to: '/books',
-      icon: <BookOpenIcon className='inline-block mb-1 h-5 w-5' />,
-      show: BLOG.pagesShow.books
-    },
-    {
-      id: 3,
-      name: t.NAV.CONTACT,
-      to: '/contact',
-      icon: <MailIcon className='inline-block mb-1 h-5 w-5' />,
-      show: BLOG.pagesShow.contact
-    }
-  ]
-
   return (
     <motion.div
       className={`mt-6 flex-shrink-0 m-auto w-full text-gray-600 dark:text-gray-300 transition-all ${

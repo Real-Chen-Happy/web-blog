@@ -1,4 +1,5 @@
 import Avatar from './NotionAvatar.js'
+import Social from '../Common/Social.js'
 import NotionRenderer from '@/components/Post/NotionRenderer'
 
 const Hero = ({ blockMap }) => {
@@ -12,7 +13,7 @@ const Hero = ({ blockMap }) => {
             frontMatter={{}}
             subPageTitle={null}
           />
-         
+          <Social />
         </div>
         <div className='w-2/5'>
           <Avatar className='text-gray-600 dark:text-gray-300' />
