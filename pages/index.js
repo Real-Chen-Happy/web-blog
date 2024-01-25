@@ -5,14 +5,14 @@ import Pagination from '@/components/Pagination'
 import { getAllPosts, getPostBlocks } from '@/lib/notion'
 import BLOG from '@/blog.config'
 
-export async function getStaticProps() {
-  var posts = await getAllPosts({})
+export async function getStaticProps({ locale }) {
+  var posts = await getAllPosts({ locale: locale })
 
   if (posts.length > 5) {
     posts = posts.slice(0,5);
   }
 
-  const heros = await getAllPosts({ onlyHidden: true })
+  const heros = await getAllPosts({ onlyHidden: true, locale: locale })
   const hero = heros.find((t) => t.slug === 'index')
 
   let blockMap

@@ -20,16 +20,16 @@ const Post = ({ post, blockMap }) => {
   )
 }
 
-export async function getStaticPaths() {
-  const posts = await getAllPosts({})
+export async function getStaticPaths({ locale }) {
+  const posts = await getAllPosts({ locale: locale })
   return {
     paths: posts.map((row) => `${BLOG.path}/${row.slug}`),
     fallback: true
   }
 }
 
-export async function getStaticProps({ params: { slug } }) {
-  const posts = await getAllPosts({ onlyNewsletter: false })
+export async function getStaticProps({ locale, params: { slug } }) {
+  const posts = await getAllPosts({ onlyTech: false, locale: locale })
   const post = posts.find((t) => t.slug === slug)
 
   try {

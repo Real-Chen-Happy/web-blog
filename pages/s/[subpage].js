@@ -1,7 +1,6 @@
 import BLOG from '@/blog.config'
 import Layout from '@/layouts/layout'
 import { getAllPosts, getPostBlocks } from '@/lib/notion'
-import { useRouter } from 'next/router'
 
 import { getAllPagesInSpace, getPageBreadcrumbs, idToUuid } from 'notion-utils'
 import { defaultMapPageUrl } from 'react-notion-x'
@@ -24,7 +23,7 @@ const Post = ({ post, blockMap }) => {
   )
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locale }) {
   const mapPageUrl = defaultMapPageUrl(BLOG.notionPageId)
 
   const pages = await getAllPagesInSpace(
@@ -41,12 +40,12 @@ export async function getStaticPaths() {
     .filter((path) => path && path !== '/s/')
 
   // Remove post id
-  const posts = await getAllPosts({})
+  const posts = await getAllPosts({ locale: locale })
   const postIds = Object.values(posts)
     .map((postId) => '/s' + mapPageUrl(postId.id))
   const noPostsIds = subpageIds.concat(postIds).filter(v => !subpageIds.includes(v) || !postIds.includes(v))
 
-  const heros = await getAllPosts({ onlyHidden: true })
+  const heros = await getAllPosts({ onlyHidden: true, locale: locale })
   const heroIds = Object.values(heros)
     .map((heroId) => '/s' + mapPageUrl(heroId.id))
   const paths = noPostsIds.concat(heroIds).filter(v => !noPostsIds.includes(v) || !heroIds.includes(v))
@@ -61,8 +60,8 @@ export async function getStaticPaths() {
   // }
 }
 
-export async function getStaticProps({ params: { subpage } }) {
-  const posts = await getAllPosts({})
+export async function getStaticProps({ locale, params: { subpage } }) {
+  const posts = await getAllPosts({ locale: locale })
 
   let blockMap, post
   try {

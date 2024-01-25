@@ -4,10 +4,11 @@ import IntroHero from '@/components/Hero/Intro'
 import { getAllPosts, getPostBlocks } from '@/lib/notion'
 import BLOG from '@/blog.config'
 
-export async function getStaticProps() {
-  const posts = await getAllPosts({ onlyLife: true })
 
-  const heros = await getAllPosts({ onlyHidden: true })
+export async function getStaticProps({ locale }) {
+  const posts = await getAllPosts({ onlyLife: true, locale: locale })
+
+  const heros = await getAllPosts({ onlyHidden: true, locale: locale })
   const hero = heros.find((t) => t.slug === BLOG.lifeSection)
 
   let blockMap
