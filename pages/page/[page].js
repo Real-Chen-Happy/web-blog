@@ -16,8 +16,7 @@ const Page = ({ postsToShow, page, showNext }) => {
 }
 
 export async function getStaticProps(context) {
-  const { locale } = useRouter()
-  const { page } = context.params // Get Current Page No.
+  const { locale, page } = context.params // Get Current Page No.
   const posts = await getAllPosts({ locale: locale })
   const postsToShow = posts.slice(
     BLOG.postsPerPage * (page - 1),
@@ -35,8 +34,7 @@ export async function getStaticProps(context) {
   }
 }
 
-export async function getStaticPaths() {
-  const { locale } = useRouter()
+export async function getStaticPaths({ locale }) {
   const posts = await getAllPosts({ locale: locale })
   const totalPosts = posts.length
   const totalPages = Math.ceil(totalPosts / BLOG.postsPerPage)

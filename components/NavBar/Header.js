@@ -12,7 +12,6 @@ import {
 } from '@heroicons/react/outline'
 import LangSwitcher from './LangSwitcher.js'
 import Logo from '@/components/Common/Logo'
-import TechIcon from '@/components/Common/TechIcon'
 import { motion } from 'framer-motion'
 
 const NavBar = () => {

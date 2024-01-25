@@ -42,7 +42,6 @@ export async function getStaticProps({ locale, params: { slug } }) {
       revalidate: 1
     }
   } catch (err) {
-    console.error(err)
     return {
       props: {
         post: null,
