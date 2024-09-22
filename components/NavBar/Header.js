@@ -8,7 +8,8 @@ import {
   VideoCameraIcon,
   SearchIcon,
   CodeIcon,
-  MenuIcon
+  MenuIcon,
+  PhotographIcon
 } from '@heroicons/react/outline'
 import LangSwitcher from './LangSwitcher.js'
 import Logo from '@/components/Common/Logo'
@@ -51,6 +52,13 @@ const NavBar = () => {
     },
     {
       id: 3,
+      name: t.NAV.PHOTO,
+      to: '/photo',
+      icon: <PhotographIcon className='inline-block mb-1 h-5 w-5' />,
+      show: true
+    },
+    {
+      id: 4,
       name: t.NAV.SEARCH,
       to: '/search',
       icon: <SearchIcon className='inline-block mb-1 h-5 w-5' />,
