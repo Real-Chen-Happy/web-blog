@@ -6,7 +6,7 @@ import BLOG from '@/blog.config'
 
 
 export async function getStaticProps({ locale }) {
-  const posts = await getAllPosts({ onlyPhoto: true, locale: locale })
+  const posts = await getAllPosts({ onlyPhoto: true, locale: locale, filterLang: false })
 
   const heros = await getAllPosts({ onlyHidden: true, locale: locale })
   const hero = heros.find((t) => t.slug === BLOG.photoSection)
